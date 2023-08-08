@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GIF Background with Overlay and Centered Image</title>
+    <title>PixelGuessr</title>
     <style>
         body {
             position: relative;
@@ -9,6 +9,7 @@
             background-size: cover;
             background-repeat: repeat;
             background-attachment: fixed;
+            /* Add any additional styling for your website */
         }
 
         body::before {
@@ -23,12 +24,19 @@
             z-index: 1; /* Ensure the overlay is below other content */
         }
 
-        .centered-image {
+        .centered-image-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2; /* Ensure the image is above the overlay */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Ensure the container is above the overlay */
+        }
+
+        .centered-image {
             width: 25%;
             max-width: 480px; /* 25% of 1920px (max-width) */
         }
@@ -42,8 +50,8 @@
 </head>
 <body>
     <!-- Your website content goes here -->
-    <div class="centered-image">
-        <img src="PixelGuessr.png" alt="Centered Image">
+    <div class="centered-image-container">
+        <img class="centered-image" src="PixelGuessr.png" alt="Centered Image">
     </div>
     <h1>PixelGuessr</h1>
     <p>A game about guessing meme photos that are pixelated.</p>
