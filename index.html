@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GIF Background</title>
+    <title>GIF Background with Overlay and Centered Image</title>
     <style>
         body {
+            position: relative;
             background-image: url('NyanBG.gif');
             background-size: cover;
             background-repeat: repeat;
             background-attachment: fixed;
         }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.28;
+            z-index: 1; /* Ensure the overlay is below other content */
+        }
+
+        .centered-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Ensure the image is above the overlay */
+            width: 25%;
+            max-width: 480px; /* 25% of 1920px (max-width) */
+        }
+
+        /* Add other CSS styles for your content if needed */
+        h1, p {
+            color: white; /* Set the text color to be visible on the dark overlay */
+            z-index: 3; /* Ensure the content is above the image */
+        }
     </style>
 </head>
 <body>
+    <!-- Your website content goes here -->
+    <div class="centered-image">
+        <img src="PixelGuessr.png" alt="Centered Image">
+    </div>
+    <h1>PixelGuessr</h1>
+    <p>A game about guessing meme photos that are pixelated.</p>
+</body>
+</html>
