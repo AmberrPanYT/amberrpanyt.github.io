@@ -13,6 +13,7 @@
 
         body::before {
             content: "";
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -23,7 +24,7 @@
         }
 
         .centered-content {
-            position: sticky;
+            position: absolute;
             top: 100%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -43,6 +44,5 @@
 <body>
     <div class="centered-image-container">
         <img class="centered-image" src="PixelGuessr.png" alt="Centered Image">
-    </div>
 </body>
 </html>
